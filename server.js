@@ -1,11 +1,22 @@
 const express = require("express");
+const path = require("path");
+
 const app = express();
 
-app.use(express.static(__dirname));
+// Serve static files
+app.use(express.static(path.join(__dirname)));
 
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+// API endpoint
+app.get("/api/status", (req, res) => {
+  res.json({
+    status: "running",
+    time: new Date(),
+    app: "Azure Demo Web App"
+  });
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log("Running on port " + port));
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});

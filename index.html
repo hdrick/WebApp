@@ -2,82 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Azure Practical Demo App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #0078D4, #00A4EF);
-            color: white;
-            text-align: center;
-            padding: 50px;
-        }
-
-        .container {
-            background: rgba(0,0,0,0.3);
-            padding: 30px;
-            border-radius: 15px;
-            display: inline-block;
-            max-width: 700px;
-        }
-
-        h1 {
-            font-size: 36px;
-        }
-
-        .status {
-            margin-top: 20px;
-            padding: 10px;
-            background: green;
-            display: inline-block;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-
-        .box {
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        ul {
-            text-align: left;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Demo Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="container">
+    <h1>☁️ Azure Demo Dashboard</h1>
 
-    <h1>☁ Azure Practical Demo App</h1>
-
-    <p>This application is hosted on <b>Microsoft Azure App Service</b>.</p>
-
-    <div class="status">LIVE ON AZURE 🚀</div>
-
-    <div class="box">
-        <h2>Cloud Architecture</h2>
-        <ul>
-            <li>Resource Group</li>
-            <li>App Service Plan</li>
-            <li>Azure Web App (PaaS)</li>
-        </ul>
+    <div class="card">
+        <h2>Status (API)</h2>
+        <p id="status">Loading...</p>
+        <button onclick="getStatus()">Refresh Status</button>
     </div>
 
-    <div class="box">
-        <h2>Demo Focus</h2>
-        <ul>
-            <li>Deployment</li>
-            <li>Cost Management</li>
-            <li>Governance (Azure Policy)</li>
-            <li>Monitoring (Azure Monitor)</li>
-        </ul>
+    <div class="card">
+        <h2>Visits</h2>
+        <p id="visits">0</p>
+        <button onclick="addVisit()">Simulate Visit</button>
     </div>
 
-    <p style="margin-top:30px;">
-        Designed for Microsoft Azure Fundamentals (AZ-900) Practical Demo
-    </p>
+    <div class="card">
+        <h2>Environment</h2>
+        <p>Demo</p>
+    </div>
 
+    <div class="card">
+        <h2>Estimated Cost</h2>
+        <p>$0.01</p>
+    </div>
+
+    <div class="card">
+        <h2>Last Updated</h2>
+        <p id="time"></p>
+    </div>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
