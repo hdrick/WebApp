@@ -1,44 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azure Demo Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azure Cloud Dashboard</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 </head>
 <body>
 
-<div class="container">
-    <h1>☁️ Azure Demo Dashboard</h1>
+    <div class="background-glow"></div>
 
-    <div class="card">
-        <h2>Status (API)</h2>
-        <p id="status">Loading...</p>
-        <button onclick="getStatus()">Refresh Status</button>
-    </div>
+    <div class="container">
 
-    <div class="card">
-        <h2>Visits</h2>
-        <p id="visits">0</p>
-        <button onclick="addVisit()">Simulate Visit</button>
-    </div>
+        <header class="hero">
+            <div>
+                <h1>☁ Azure Cloud Dashboard</h1>
 
-    <div class="card">
-        <h2>Environment</h2>
-        <p>Demo</p>
-    </div>
+                <p>
+                    Simple monitoring demo hosted on Azure App Service
+                </p>
 
-    <div class="card">
-        <h2>Estimated Cost</h2>
-        <p>$0.01</p>
-    </div>
+                <p class="author">
+                    Created by <strong>Hendwrick Gonzales</strong>
+                </p>
+            </div>
 
-    <div class="card">
-        <h2>Last Updated</h2>
-        <p id="time"></p>
+            <div class="badge">
+                LIVE
+            </div>
+        </header>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="icon blue">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+
+                <h2>API Status</h2>
+
+                <p id="status" class="big-text">
+                    Loading...
+                </p>
+
+                <button onclick="getStatus()">
+                    Refresh Status
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="icon purple">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <h2>Visits</h2>
+
+                <p id="visits" class="counter">
+                    0
+                </p>
+
+                <button onclick="addVisit()">
+                    Simulate Visit
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="icon green">
+                    <i class="fa-solid fa-cloud"></i>
+                </div>
+
+                <h2>Environment</h2>
+
+                <p class="info">Production Demo</p>
+
+                <span class="tag">Azure Hosted</span>
+            </div>
+
+            <div class="card">
+                <div class="icon orange">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+
+                <h2>Estimated Cost</h2>
+
+                <p class="price">$0.01</p>
+
+                <small>Running on Free Tier</small>
+            </div>
+
+            <div class="card wide-card">
+                <div class="icon cyan">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <h2>Last Updated</h2>
+
+                <p id="time" class="time-text">
+                    --
+                </p>
+            </div>
+
+        </div>
+
     </div>
-</div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
